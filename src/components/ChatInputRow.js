@@ -1,11 +1,11 @@
 import {React, useRef} from 'react'
 
-export default function ChatInputRow(props) {
+export default function ChatInputRow({ submitCallback }) {
   const inputEl = useRef(null);
   function submit (e) {
     e.preventDefault()
     e.stopPropagation()
-    props.submitCallback(inputEl.current.value)
+    submitCallback(inputEl.current.value)
     // console.log(inputEl.current.value)
     inputEl.current.value = ''
   }
